@@ -1,5 +1,3 @@
-// src/api/fetchNFTs.js
-
 export const fetchNFTs = async () => {
     try {
       const response = await fetch('http://localhost:1337/api/collections');

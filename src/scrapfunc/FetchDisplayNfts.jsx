@@ -73,9 +73,7 @@ const FetchDisplayNfts = () => {
       nftItem.innerHTML = `
         <img src="${convertIpfsUrl(metadata.image)}" alt="${metadata.name}" />
         <h3>${metadata.name}</h3>
-        <p>${metadata.description}</p>
         <p>Token ID: ${tokenId}</p>
-        <p>Owner: ${owner}</p>
       `;
 
       // Add click handler to navigate to the NFT detail page

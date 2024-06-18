@@ -3,20 +3,15 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import NFTList from './components/Collections';
 import NFTDetail from './scrapfunc/NFTDetail';
 import FetchDisplayNfts from './scrapfunc/FetchDisplayNfts';
+import Metamask from './components/Metamask';
+import Navbar from './components/Navbar';
 import './App.css';
 
 const App = () => {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/collections">Home</Link>
-            </li>
-          </ul>
-        </nav>
-
+        <Navbar />
         <Routes>
           <Route path="/collections" element={<NFTList />} />
           <Route path="/collections/:contractAddress" element={<FetchDisplayNfts />} />

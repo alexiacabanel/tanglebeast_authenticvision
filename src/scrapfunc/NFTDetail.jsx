@@ -1,11 +1,15 @@
-// src/components/NFTDetail.jsx
-
 import React from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 
 const NFTDetail = () => {
   const { tokenId, contractAddress } = useParams(); // Get contract address and tokenId from URL
   const location = useLocation();
+  
+  // Vérifiez si location.state et location.state.metadata sont définis
+  if (!location.state || !location.state.metadata) {
+    return <div>Metadata not found</div>;
+  }
+
   const { metadata, owner } = location.state;
 
   const convertIpfsUrl = (ipfsUrl) => {
